@@ -5,7 +5,7 @@ import { Context } from "../../Context/Contex";
 
 const PrivacyRadioGroup = () => {
   const { spacePrivacy, matchesSM } = useContext(Context);
-  const data = [
+  const options = [
     {
       name: "Privado",
       value: "private",
@@ -28,7 +28,7 @@ const PrivacyRadioGroup = () => {
           defaultValue="private"
         >
           <Box display="flex" margin={1} flexWrap={matchesSM && "wrap"} gap={1}>
-            {data.map((option) => (
+            {options.map((option) => (
               <PrivacyRadioCard
                 key={option.name}
                 value={option.value}

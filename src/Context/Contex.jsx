@@ -26,6 +26,7 @@ export const Provider = ({ children }) => {
   const onSubmit = (data) => {
     const newData = { ...data, spaceColor: spaceColor };
     console.table(newData);
+    resetForm();
   };
   const resetForm = () => {
     reset(
@@ -43,7 +44,7 @@ export const Provider = ({ children }) => {
         keepTouched: false,
         keepIsValid: false,
         keepSubmitCount: false,
-      },
+      }
     );
     setSpaceColor("#39b0ff");
   };

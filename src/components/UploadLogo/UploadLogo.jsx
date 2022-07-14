@@ -4,8 +4,6 @@ import Information from "../Information/Information";
 import { Context } from "../../Context/Contex";
 const UploadLogo = () => {
   const { register, spaceLogo } = useContext(Context);
-  const [logoURL, setLogoURL] = useState("");
-  console.log(spaceLogo);
 
   return (
     <>
@@ -16,7 +14,7 @@ const UploadLogo = () => {
         <Box display="flex" gap="13px" alignItems="center">
           <Avatar
             alt="B"
-            src={spaceLogo && (URL.createObjectURL(spaceLogo[0]))}
+            src={spaceLogo && URL.createObjectURL(spaceLogo[0])}
             sx={{
               width: "67px",
               height: "67px",
