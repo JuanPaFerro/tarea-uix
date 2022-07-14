@@ -25,7 +25,6 @@ const Admin = () => {
 
         <InputContainer
           label="Nombre del espacio"
-          type="text"
           name="spaceName"
           placeholder="Ep: Mi espacio de trabajo"
           validationObject={{ required: true, maxLength: 20 }}
@@ -33,7 +32,6 @@ const Admin = () => {
         <Box marginY={3}>
           <InputContainer
             label="URL del espacio (dirección web)"
-            type="text"
             name="spaceURL"
             placeholder="Ep: mi.dominio"
             validationObject={{

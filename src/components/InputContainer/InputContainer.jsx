@@ -2,19 +2,12 @@ import React, { useContext } from "react";
 import { Box, OutlinedInput, Typography } from "@mui/material";
 import { Context } from "../../Context/Contex";
 
-const InputContainer = ({
-  label,
-  type,
-  placeholder,
-  name,
-  validationObject,
-}) => {
+const InputContainer = ({ label, placeholder, name, validationObject }) => {
   const { register } = useContext(Context);
   return (
     <Box marginY={3}>
       <Typography variant="subtitle2">{label}</Typography>
       <OutlinedInput
-        type={type}
         defaultValue=""
         placeholder={placeholder}
         {...register(name, { ...validationObject })}
