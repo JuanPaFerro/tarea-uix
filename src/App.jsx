@@ -1,5 +1,11 @@
+import Home from "./pages/Home";
+import { Provider } from "./Context/Contex";
 function App() {
-  return <div>Hola Dofleini!</div>;
+  return (
+    <Provider>
+      <Home />
+    </Provider>
+  );
 }
 
 export default App;
