@@ -3,8 +3,10 @@ import { Avatar, Box, Button, Icon, Typography } from "@mui/material";
 import Information from "../Information/Information";
 import { Context } from "../../Context/Contex";
 const UploadLogo = () => {
-  const { register } = useContext(Context);
+  const { register, spaceLogo } = useContext(Context);
   const [logoURL, setLogoURL] = useState("");
+  console.log(spaceLogo);
+
   return (
     <>
       <Typography variant="body2" fontWeight="regular" marginY={2}>
@@ -14,7 +16,7 @@ const UploadLogo = () => {
         <Box display="flex" gap="13px" alignItems="center">
           <Avatar
             alt="B"
-            src={logoURL}
+            src={spaceLogo && (URL.createObjectURL(spaceLogo[0]))}
             sx={{
               width: "67px",
               height: "67px",
@@ -29,11 +31,6 @@ const UploadLogo = () => {
             id="raised-button-file"
             type="file"
             {...register("spaceLogo")}
-            onChange={(e) => {
-              let file = e.target.files[0];
-              const objectURL = URL.createObjectURL(file);
-              setLogoURL(objectURL);
-            }}
           />
           <label htmlFor="raised-button-file">
             <Button

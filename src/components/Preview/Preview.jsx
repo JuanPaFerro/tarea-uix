@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { Context } from "../../Context/Contex";
 
 function Preview() {
-  const { spaceColor, spaceName, spaceURL } = useContext(Context);
+  const { spaceColor, spaceName, spaceURL, spaceLogo } = useContext(Context);
   return (
     <Box>
       <svg
@@ -12,8 +12,24 @@ function Preview() {
         style={{ position: "sticky", top: "0px" }}
       >
         <defs>
+          <pattern
+            id="logo"
+            patternUnits="userSpaceOnUse"
+            width="20"
+            height="20"
+          >
+            <image
+              href={spaceLogo && URL.createObjectURL(spaceLogo[0])}
+              x="0"
+              y="0"
+              width="20"
+              height="20"
+            />
+          </pattern>
           <style>
-            {`.b,.k{fill:#fff}.b{stroke:#e4e4e4}.c{fill:#f5f6f8}.ac,.h{fill:none}.h{stroke:#48b5fe}.r{opacity:.5}.n{fill:#bcbec1}.p{fill:#e1e8eb}.aa,.r{fill:#cfd0d2}.s{fill:${spaceColor}}.u{fill:#dfdfdf}.v{fill:#538944}.v,.w{font-size:14px}.v{font-family:OpenSans-SemiBold,Open Sans;font-weight:600}.w{font-family:OpenSans-Regular,Open Sans}.af{stroke:none}`}
+            {`.b,.k{fill:#fff}.b{stroke:#e4e4e4}.c{fill:#f5f6f8}.ac,.h{fill:none}.h{stroke:#48b5fe}.r{opacity:.5}.n{fill:#bcbec1}.p{fill:#e1e8eb}.aa,.r{fill:#cfd0d2}.s{fill:${spaceColor}}.u{fill:${
+              spaceLogo ? "url(#logo)" : "#dfdfdf"
+            }}.v{fill:#538944}.v,.w{font-size:14px}.v{font-family:OpenSans-SemiBold,Open Sans;font-weight:600}.w{font-family:OpenSans-Regular,Open Sans}.af{stroke:none}`}
           </style>
           <clipPath id="a">
             <path
@@ -517,43 +533,45 @@ function Preview() {
               r={10}
               transform="translate(3716 658)"
             />
-            <g transform="translate(3719.776 661.963)">
-              <rect
-                className="k"
-                width={10.252}
-                height={2.239}
-                rx={1.12}
-                transform="translate(0 6.718)"
-              />
-              <rect
-                className="k"
-                width={7.831}
-                height={2.239}
-                rx={1.12}
-                transform="translate(2.421)"
-              />
-              <rect
-                className="k"
-                width={6.155}
-                height={2.239}
-                rx={1.12}
-                transform="translate(6.337 3.359)"
-              />
-              <rect
-                className="k"
-                width={4.479}
-                height={2.239}
-                rx={1.12}
-                transform="translate(.182 3.359)"
-              />
-              <rect
-                className="k"
-                width={4.479}
-                height={2.239}
-                rx={1.12}
-                transform="translate(.182 10.097)"
-              />
-            </g>
+            {!spaceLogo && (
+              <g transform="translate(3719.776 661.963)">
+                <rect
+                  className="k"
+                  width={10.252}
+                  height={2.239}
+                  rx={1.12}
+                  transform="translate(0 6.718)"
+                />
+                <rect
+                  className="k"
+                  width={7.831}
+                  height={2.239}
+                  rx={1.12}
+                  transform="translate(2.421)"
+                />
+                <rect
+                  className="k"
+                  width={6.155}
+                  height={2.239}
+                  rx={1.12}
+                  transform="translate(6.337 3.359)"
+                />
+                <rect
+                  className="k"
+                  width={4.479}
+                  height={2.239}
+                  rx={1.12}
+                  transform="translate(.182 3.359)"
+                />
+                <rect
+                  className="k"
+                  width={4.479}
+                  height={2.239}
+                  rx={1.12}
+                  transform="translate(.182 10.097)"
+                />
+              </g>
+            )}
             <g clipPath="url(#o)">
               <g transform="translate(3689 716)">
                 <g className="b">
