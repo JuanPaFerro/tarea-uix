@@ -10,7 +10,7 @@ const InputContainer = ({ fieldName, placeholder, name, validationObject }) => {
       <OutlinedInput
         defaultValue=""
         placeholder={placeholder}
-        {...register(name, { ...validationObject })}
+        {...register(name)}
         sx={{
           width: "100%",
           height: "45px",

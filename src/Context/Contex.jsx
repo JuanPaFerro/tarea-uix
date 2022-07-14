@@ -1,14 +1,24 @@
 import React, { useState, createContext } from "react";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import { useMediaQuery, useTheme } from "@mui/material";
 export const Context = createContext();
+
+const customFormSchema = yup.object().shape({
+  spaceName: yup.string().required("required"),
+  spaceURL: yup.string().required("required"),
+  spacePrivacy: yup.string().required("required"),
+  spaceAmountOfPeople: yup.string().required("require"),
+});
 
 export const Provider = ({ children }) => {
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const [spaceColor, setSpaceColor] = useState("#39B0FF");
 
-  const { register, handleSubmit, reset, watch, setValue } = useForm({
+  const { register, handleSubmit, reset, watch } = useForm({
+    resolver: yupResolver(customFormSchema),
     defaultValues: {
       spaceName: "",
       spaceURL: "",

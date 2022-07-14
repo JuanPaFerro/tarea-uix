@@ -13,8 +13,8 @@ function Preview() {
         style={{
           position: "sticky",
           top: "0px",
-          minWidth: "500px",
-          minHeight: "500px",
+          minWidth: "400px",
+          minHeight: "400px",
         }}
       >
         <defs>

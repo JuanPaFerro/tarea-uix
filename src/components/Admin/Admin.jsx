@@ -27,17 +27,12 @@ const Admin = () => {
           fieldName="Nombre del espacio"
           name="spaceName"
           placeholder="Ep: Mi espacio de trabajo"
-          validationObject={{ required: true, maxLength: 20 }}
         />
         <Box marginY={3}>
           <InputContainer
             fieldName="URL del espacio (dirección web)"
             name="spaceURL"
             placeholder="Ep: mi.dominio"
-            validationObject={{
-              required: true,
-              maxLength: 20,
-            }}
           />
           <Information
             text={[

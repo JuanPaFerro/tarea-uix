@@ -26,7 +26,7 @@ const AmountOfPeopleRadioButton = ({ id, value, checked, onChange }) => {
     <>
       <input
         style={{ display: "none" }}
-        {...register("spaceAmountOfPeople", { required: true })}
+        {...register("spaceAmountOfPeople")}
         id={id}
         type="radio"
         value={value}

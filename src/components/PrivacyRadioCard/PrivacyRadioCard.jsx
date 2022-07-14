@@ -12,7 +12,7 @@ const PrivacyRadioCard = ({ value, description, title, checked }) => {
       control={
         <Radio
           checked={checked}
-          {...register("spacePrivacy", { required: true })}
+          {...register("spacePrivacy")}
           sx={{
             color: "#00000080",
             "&.Mui-checked": {
