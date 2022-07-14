@@ -3,15 +3,19 @@ import { Box } from "@mui/material";
 import { Context } from "../../Context/Contex";
 
 function Preview() {
-  const { spaceColor, spaceName, spaceURL, spaceLogo } = useContext(Context);
+  const { spaceColor, spaceName, spaceURL, spaceLogo, matchesSM } =
+    useContext(Context);
   return (
-    <Box>
+    <Box display={matchesSM ? "none" : "block"}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 807 598"
-        style={{ position: "sticky", top: "0px" }}
-        height="500px"
-        width="500px"
+        style={{
+          position: "sticky",
+          top: "0px",
+          minWidth: "500px",
+          minHeight: "500px",
+        }}
       >
         <defs>
           <pattern

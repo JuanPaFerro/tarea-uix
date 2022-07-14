@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Box } from "@mui/material";
 import { CirclePicker } from "react-color";
 import CustomColorSketchPicker from "../CustomColorSketchPicker/CustomColorSketchPicker";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { Context } from "../../Context/Contex";
 
 const CustomCirclePicker = styled(CirclePicker)`
@@ -12,7 +12,7 @@ const CustomCirclePicker = styled(CirclePicker)`
 `;
 
 const Colors = () => {
-  const {setSpaceColor, matchesSM } = useContext(Context);
+  const { setSpaceColor, matchesSM } = useContext(Context);
   return (
     <Box
       display="flex"
@@ -34,7 +34,7 @@ const Colors = () => {
           "#D6198A",
           "#B321F1",
         ]}
-        onChange={(color) =>setSpaceColor(color.hex)}
+        onChange={(color) => setSpaceColor(color.hex)}
         circleSize={45}
       />
       <CustomColorSketchPicker />

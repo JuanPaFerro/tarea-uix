@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <Container maxWidth="lg" sx={{ display: "flex", paddingY: "80px" }}>
       <Admin />
-      <Preview display={matchesSM ? "none" : "block"} />
+      <Preview display={matchesSM && "none"} />
     </Container>
   );
 };
