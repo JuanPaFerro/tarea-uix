@@ -10,6 +10,8 @@ function Preview() {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 807 598"
         style={{ position: "sticky", top: "0px" }}
+        height="500px"
+        width="500px"
       >
         <defs>
           <pattern
