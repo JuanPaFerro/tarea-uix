@@ -3,7 +3,7 @@ import { Box, FormControlLabel, Typography, Radio } from "@mui/material";
 import { Context } from "../../Context/Contex";
 import useConvertHexToRgba from "../../hooks/useConvertHexToRgba";
 
-const PrivacyRadioCard = ({ value, description, title, isChecked }) => {
+const PrivacyRadioCard = ({ value, description, title, checked }) => {
   const { spaceColor, register, matchesSM } = useContext(Context);
 
   return (
@@ -11,7 +11,8 @@ const PrivacyRadioCard = ({ value, description, title, isChecked }) => {
       value={value}
       control={
         <Radio
-          {...register("spaceAmountOfPeople", { required: true })}
+          checked={checked}
+          {...register("spacePrivacy", { required: true })}
           sx={{
             color: "#00000080",
             "&.Mui-checked": {
@@ -29,7 +30,7 @@ const PrivacyRadioCard = ({ value, description, title, isChecked }) => {
           flexDirection="column"
           gap={1}
         >
-          <Typography variant="body2" color={isChecked ? spaceColor : "#000"}>
+          <Typography variant="body2" color={checked ? spaceColor : "#000"}>
             {title}
           </Typography>
           <Typography variant="body2" color="#00000080">
@@ -39,11 +40,11 @@ const PrivacyRadioCard = ({ value, description, title, isChecked }) => {
       }
       sx={{
         width: `${matchesSM ? "100%" : "50%"}`,
-        border: `1px solid ${isChecked ? spaceColor : "#E4E4E4"}`,
+        border: `1px solid ${checked ? spaceColor : "#E4E4E4"}`,
         alignItems: "flex-start",
         borderRadius: "5px",
         boxShadow: `${
-          isChecked
+          checked
             ? `0 0 0 5px ${useConvertHexToRgba(spaceColor, "0.1")}`
             : "unset"
         } `,
