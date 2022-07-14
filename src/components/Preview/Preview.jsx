@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { Context } from "../../Context/Contex";
 
 function Preview() {
-  const {spaceColor, spaceName, spaceURL } = useContext(Context);
+  const { spaceColor, spaceName, spaceURL } = useContext(Context);
   return (
     <Box>
       <svg
@@ -501,7 +501,7 @@ function Preview() {
             </text>
             <text className="w" transform="translate(3742.538 673.215)">
               <tspan x={0} y={0}>
-                {`${spaceName ? spaceName : "Plankton - Mi Espacio"}`}
+                {`Plankton - ${spaceName ? spaceName : "Mi Espacio"}`}
               </tspan>
             </text>
             <path

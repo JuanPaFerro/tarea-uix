@@ -24,14 +24,14 @@ const Admin = () => {
         <UploadLogo />
 
         <InputContainer
-          label="Nombre del espacio"
+          fieldName="Nombre del espacio"
           name="spaceName"
           placeholder="Ep: Mi espacio de trabajo"
           validationObject={{ required: true, maxLength: 20 }}
         />
         <Box marginY={3}>
           <InputContainer
-            label="URL del espacio (dirección web)"
+            fieldName="URL del espacio (dirección web)"
             name="spaceURL"
             placeholder="Ep: mi.dominio"
             validationObject={{

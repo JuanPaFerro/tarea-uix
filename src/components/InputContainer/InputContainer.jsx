@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { Box, OutlinedInput, Typography } from "@mui/material";
+import { Box, OutlinedInput, Typography, InputAdornment } from "@mui/material";
 import { Context } from "../../Context/Contex";
 
-const InputContainer = ({ label, placeholder, name, validationObject }) => {
+const InputContainer = ({ fieldName, placeholder, name, validationObject }) => {
   const { register } = useContext(Context);
   return (
     <Box marginY={3}>
-      <Typography variant="subtitle2">{label}</Typography>
+      <Typography variant="subtitle2">{fieldName}</Typography>
       <OutlinedInput
         defaultValue=""
         placeholder={placeholder}
@@ -18,6 +18,11 @@ const InputContainer = ({ label, placeholder, name, validationObject }) => {
           borderColor: "#e4e4e4",
           borderRadius: "5px",
         }}
+        endAdornment={
+          name === "spaceURL" && (
+            <InputAdornment position="end">.dofleini.com</InputAdornment>
+          )
+        }
       />
     </Box>
   );
