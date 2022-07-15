@@ -6,10 +6,16 @@ import { useMediaQuery, useTheme } from "@mui/material";
 export const Context = createContext();
 
 const customFormSchema = yup.object().shape({
-  spaceName: yup.string().required("required"),
-  spaceURL: yup.string().required("required"),
-  spacePrivacy: yup.string().required("required"),
-  spaceAmountOfPeople: yup.string().required("require"),
+  spaceName: yup
+    .string()
+    .required("Por favor introduzca el nombre de su espacio"),
+  spaceURL: yup.string().required("Por favor introduzca la URL de su espacio."),
+  spacePrivacy: yup
+    .string()
+    .required("Debe seleccionar una opcion de antes de guardar."),
+  spaceAmountOfPeople: yup
+    .string()
+    .required("Debe seleccionar una opcion antes de guardar."),
 });
 
 export const Provider = ({ children }) => {
@@ -17,7 +23,13 @@ export const Provider = ({ children }) => {
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const [spaceColor, setSpaceColor] = useState("#39B0FF");
 
-  const { register, handleSubmit, reset, watch } = useForm({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm({
     resolver: yupResolver(customFormSchema),
     defaultValues: {
       spaceName: "",
@@ -66,6 +78,7 @@ export const Provider = ({ children }) => {
     spaceAmountOfPeople,
     spaceLogo,
     spaceColor,
+    errors,
     onSubmit,
     register,
     resetForm,
