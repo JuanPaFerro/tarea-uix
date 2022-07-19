@@ -1,4 +1,5 @@
-# Tarea-UIX
+# My Professional Portfolio
+
 ## About
 
 This project is my solution for a technical challenge as part of the recruitment process at [Dofleini Software](https://www.dofleini.com/)
