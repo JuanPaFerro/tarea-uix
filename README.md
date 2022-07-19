@@ -7,6 +7,8 @@ This project is my solution for a technical challenge as part of the recruitment
 ![portfolio](https://i.ibb.co/m4c8b95/tarea-Dofleini.png)
 You can find a production version of this project [here](https://tarea-uix.vercel.app/)
 
+Also can find a deploy on github pages [here](https://juanpaferro.github.io/tarea-uix/)
+
 ## Running on local
 For running a local version just follow the next steps:
 
